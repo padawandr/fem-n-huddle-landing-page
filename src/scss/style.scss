@@ -42,7 +42,15 @@ $color-neutral: hsl(0, 0%, 100%);
 //===== BASE STYLES ==========================================================//
 body {
 	@extend %font-text;
-	background: $color-primary;
+	background-color: $color-primary;
+	background-image: url('../assets/bg-mobile.svg');
+	background-position-x: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 100vh;
 }
 
 .container {
@@ -52,18 +60,8 @@ body {
 }
 
 //===== MOBILE STYLES ========================================================//
-body {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	min-height: 100vh;
-}
-
-header {
-	margin: 3rem 0 5rem;
-}
-
 .nav {
+	margin: 3rem auto 5rem;
 
 	&__link {}
 
@@ -145,3 +143,107 @@ header {
 }
 
 //===== MEDIA QUERIES ========================================================//
+@media screen and (min-width: 1024px) {
+
+	body {
+		background-image: url('../assets/bg-desktop.svg');
+		background-size: cover;
+	}
+
+	.container {
+		width: min(90%, 128rem);
+	}
+
+	.nav {
+		margin: 4rem auto 8rem;
+
+		&__logo {
+			width: 21rem;
+		}
+	}
+
+	.hero {
+		align-items: center;
+		flex-direction: row;
+		gap: 5rem;
+		justify-content: center;
+
+		&__image {
+			display: inline-block;
+			flex: 1;
+			flex: 1.35;
+		}
+
+		&__info {
+			text-align: left;
+			margin: 0;
+			flex: 1;
+		}
+
+		&__title {
+			font-size: 3.2rem;
+			margin: 0;
+			max-width: 43rem;
+		}
+
+		&__description {
+			font-size: 1.7rem;
+			margin-top: 2rem;
+		}
+
+		&__button {
+			font-size: 1.7rem;
+			padding: 1.6rem 6.4rem 1.4rem;
+		}
+	}
+
+	.social {
+		justify-content: flex-end;
+		gap: 1.5rem;
+		margin: 3rem auto 4rem;
+
+		&__link {
+			height: 4rem;
+			width: 4rem;
+		}
+
+		&__icon {
+			font-size: 2rem;
+		}
+	}
+
+}
+
+@media screen and (min-width: 1240px) {
+
+	.hero {
+		align-items: flex-start;
+
+		&__info {
+			margin: 5rem 0 0;
+		}
+
+		&__title {
+			font-size: 4rem;
+			max-width: none;
+		}
+
+		&__description {
+			font-size: 1.8rem;
+		}
+
+		&__button {
+			font-size: 1.8rem;
+		}
+	}
+
+}
+
+@media screen and (min-width: 1320px) {
+
+	body {
+		background-position-x: left;
+		background-size: contain;
+	}
+
+}
