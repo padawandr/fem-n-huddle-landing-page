@@ -1,0 +1,147 @@
+//===== PALETTE ==============================================================//
+$color-primary: hsl(257, 40%, 49%);
+$color-secondary: hsl(300, 69%, 71%);
+$color-neutral: hsl(0, 0%, 100%);
+
+//===== TYPOGRAPHY ===========================================================//
+%font-title {
+	color: $color-neutral;
+	font-family: 'Poppins', sans-serif;
+	font-size: 2.4rem;
+	font-weight: 600;
+	line-height: 1.5;
+}
+
+%font-text {
+	color: $color-neutral;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.6rem;
+	font-weight: 400;
+	line-height: 1.5;
+}
+
+%font-button {
+	color: $color-primary;
+	font-family: 'Poppins', sans-serif;
+	font-size: 1.2rem;
+	font-weight: 400;
+	line-height: 1.5;
+}
+
+//===== RESET ================================================================//
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	font-size: 62.5%;
+}
+
+//===== BASE STYLES ==========================================================//
+body {
+	@extend %font-text;
+	background: $color-primary;
+}
+
+.container {
+	margin: auto;
+	overflow: hidden;
+	width: min(80%, 46rem);
+}
+
+//===== MOBILE STYLES ========================================================//
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 100vh;
+}
+
+header {
+	margin: 3rem 0 5rem;
+}
+
+.nav {
+
+	&__link {}
+
+	&__logo {
+		width: 13rem;
+	}
+}
+
+.hero {
+	display: flex;
+	flex-direction: column;
+
+	&__image {
+		width: 100%;
+	}
+
+	&__info {
+		text-align: center;
+		margin: 6rem 0;
+	}
+
+	&__title {
+		@extend %font-title;
+		margin: auto;
+		max-width: 32rem;
+	}
+
+	&__description {
+		margin: 1.2rem auto 0;
+	}
+
+	&__button {
+		@extend %font-button;
+		background-color: $color-neutral;
+		border: none;
+		border-radius: 10rem;
+		box-shadow: 0 .3rem .5rem hsla(0, 0, 0, .25);
+		cursor: pointer;
+		margin-top: 2.5rem;
+		padding: 1.2rem 7.6rem 1rem;
+		transition: background-color .2s, color .2s;
+
+		&:hover, &:active {
+			background-color: $color-secondary;
+			color: $color-neutral;
+		}
+	}
+}
+
+.social {
+	display: flex;
+	gap: 1rem;
+	justify-content: center;
+	margin-bottom: 3rem;
+
+	&__item {
+		list-style: none;
+	}
+
+	&__link {
+		align-items: center;
+		border: 1px solid $color-neutral;
+		border-radius: 50%;
+		color: $color-neutral;
+		display: flex;
+		height: 3rem;
+		justify-content: center;
+		text-decoration: none;
+		width: 3rem;
+		transition: border-color .2s, color .2s;
+
+		&:hover, &:active {
+			border-color: $color-secondary;
+			color: $color-secondary;
+		}
+	}
+
+	&__icon {}
+}
+
+//===== MEDIA QUERIES ========================================================//
